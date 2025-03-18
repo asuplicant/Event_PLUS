@@ -6,6 +6,7 @@ namespace Events_PLUS.Domains
     [Table("TiposEventos")]
     public class TiposEventos
     {
+        // Foreign Key
         [Key]
         public Guid IdTipoEvento { get; set; }
 

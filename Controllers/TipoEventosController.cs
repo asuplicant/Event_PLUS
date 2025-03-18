@@ -15,7 +15,7 @@ namespace Events_PLUS.Controllers
             {
                 _tiposEventosRepository = tiposEventosRepository;
             }
-            //cadastrar
+            // Cadastrar TiposEventos
             [HttpPost]
             public IActionResult Post(TiposEventos tiposEventos)
             {
@@ -31,7 +31,7 @@ namespace Events_PLUS.Controllers
                     return BadRequest(e.Message);
                 }
             }
-            //deletar
+            // Deletar
             [HttpDelete("{id}")]
             public IActionResult DeleteById(Guid id)
             {
@@ -46,7 +46,7 @@ namespace Events_PLUS.Controllers
                     throw;
                 }
             }
-            //listar
+            // Listar TiposEventos
             [HttpGet]
             public IActionResult Get()
             {
@@ -62,7 +62,7 @@ namespace Events_PLUS.Controllers
                 }
             }
 
-            //BuscarPorId 
+            // BuscarPorId 
             [HttpGet("BuscarPorId/{id}")]
             public IActionResult GetById(Guid id, TiposEventos tiposEventos)
             {

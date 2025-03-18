@@ -1,19 +1,19 @@
 ﻿using Events_PLUS.Domains;
 using Events_PLUS.Interfaces;
-using Projeto_Events_PLUS.Context;
+using Events_PLUS.Context;
 
 namespace Events_PLUS.Repositories
 {
     public class TipoEventoRepository : ITiposEventosRepository
     {
-        private readonly Events_Plus_Context _context;
-        public TipoEventoRepository(Events_Plus_Context context)
+        private readonly Events_PLUS_Context _context;
+        public TipoEventoRepository(Events_PLUS_Context context)
         {
             _context = context;
         }
         public void Atualizar(Guid id, Events_PLUS.Domains.TiposEventos tipoEventos)
         {
-            TiposEventos eventoBuscado = _context.TipoEvento.Find(id)!;
+            TiposEventos eventoBuscado = _context.TiposEventos.Find(id)!;
 
             if (eventoBuscado != null)
             {
@@ -29,7 +29,7 @@ namespace Events_PLUS.Repositories
         {
             try
             {
-                TiposEventos tipoEventoBuscado = _context.TipoEvento.Find(id)!;
+                TiposEventos tipoEventoBuscado = _context.TiposEventos.Find(id)!;
 
                 if (tipoEventoBuscado != null)
                 {
@@ -51,7 +51,7 @@ namespace Events_PLUS.Repositories
         {
             try
             {
-                _context.TipoEvento.Add(tipoEventos);
+                _context.TiposEventos.Add(tipoEventos);
 
                 _context.SaveChanges();
             }
@@ -69,11 +69,11 @@ namespace Events_PLUS.Repositories
 
             try
             {
-                TiposEventos eventoBuscado = _context.TipoEvento.Find(id)!;
+                TiposEventos eventoBuscado = _context.TiposEventos.Find(id)!;
 
                 if (eventoBuscado != null)
                 {
-                    _context.TipoEvento.Remove(eventoBuscado);
+                    _context.TiposEventos.Remove(eventoBuscado);
                 }
                 _context.SaveChanges();
             }
@@ -88,7 +88,7 @@ namespace Events_PLUS.Repositories
         // Listar
         public List<TiposEventos> Listar()
         {
-            List<TiposEventos> ListaEvento = _context.TipoEvento.ToList();
+            List<TiposEventos> ListaEvento = _context.TiposEventos.ToList();
             return ListaEvento;
         }
     }

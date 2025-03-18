@@ -8,6 +8,7 @@ namespace Events_PLUS.Domains
     [Table("ComentarioEvento")]
     public class ComentarioEvento
     {
+        // Foreign Key 
         [Key]
         public Guid IdComentarioEvento { get; set; }
 
@@ -20,18 +21,18 @@ namespace Events_PLUS.Domains
         public bool? Exibe { get; set; }
 
 
-        // referencia tabela usuario
+        // Referência Tabela Usuário
 
-        [Required(ErrorMessage = "O nome do usuário é obrigatório!")]
+        [Required(ErrorMessage = "O Nome do usuário é obrigatório!")]
         public Guid IdUsuario { get; set; }
 
         [ForeignKey("IdUsuario")]
         public Usuarios? Usuarios { get; set; }
 
 
-        // referencia tabela evento
+        // Referência Tabela Evento
 
-        [Required(ErrorMessage = "O nome do evento é obrigatório!")]
+        [Required(ErrorMessage = "O Nome do evento é obrigatório!")]
         public Guid IdEvento { get; set; }
 
         [ForeignKey("IdEvento")]

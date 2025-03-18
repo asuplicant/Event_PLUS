@@ -2,33 +2,33 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
-namespace Projeto_Events_PLUS.Context
+namespace Events_PLUS.Context
 {
-    public class Events_Plus_Context : DbContext
+    public class Events_PLUS_Context : DbContext
     {
-        public Events_Plus_Context()
+        public Events_PLUS_Context()
         {
         }
 
-        public Events_Plus_Context(DbContextOptions<Events_Plus_Context> options) : base(options)
+        public Events_PLUS_Context(DbContextOptions<Events_PLUS_Context> options) : base(options)
         {
         }
 
-
-        public DbSet<TiposEventos> TipoEvento { get; set; }
-        public DbSet<Usuarios> Usuarios { get; set; }
+        // Ctrl + D = Duplica a linha!
+        public DbSet<ComentarioEvento> ComentarioEvento { get; set; }
         public DbSet<Eventos> Eventos { get; set; }
-        public DbSet<PresencasEventos> Presenca { get; set; }
-        public DbSet<ComentarioEvento> Comentario { get; set; }
-        public DbSet<Instituicoes> Instituicao { get; set; }
-        public DbSet<TiposUsuarios> TipoUsuarios { get; set; }
+        public DbSet<Instituicoes> Instituicoes { get; set; }
+        public DbSet<PresencasEventos> PresencasEventos { get; set; }
+        public DbSet<TiposEventos> TiposEventos { get; set; }
+        public DbSet<TiposUsuarios> TiposUsuarios { get; set; }
+        public DbSet<Usuarios> Usuarios { get; set; }
         
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=NOTE13-S28\\SQLEXPRESS;Database=EventsPlus;User ID=sa;Password=Senai@134;TrustServerCertificate=true");
+                optionsBuilder.UseSqlServer("Server=NOTE13-S28\\SQLEXPRESS;Database=Events_PLUS;User ID=sa;Password=Senai@134;TrustServerCertificate=true");
             }
 
         }

@@ -6,9 +6,9 @@ namespace Events_PLUS.Domains
     [Table("TiposUsuarios")]
     public class TiposUsuarios
     {
-        // Implementando a ForeignKEY TipoUsuarioId
+        // Implementando a Foreign KEY TipoUsuarioId
         [Key]
-        public Guid TipoUsuarioID { get; set; }
+        public Guid TipoUsuarioId { get; set; }
 
         [Column(TypeName = "VARCHAR(50)")]
         [Required(ErrorMessage = "O titulo de usuario é ")]

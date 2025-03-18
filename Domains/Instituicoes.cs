@@ -8,6 +8,7 @@ namespace Events_PLUS.Domains
     [Index(nameof(CNPJ), IsUnique = true)]
     public class Instituicoes
     {
+        // Foreign Key
         [Key]
         public Guid IdInstituicoes { get; set; }
 

@@ -5,10 +5,11 @@ namespace Events_PLUS.Domains
 {
     public class Usuarios
     {
+        // Foreign Key
         [Key]
         public Guid IdUsuario { get; set; }
 
-        // Usuario
+        // Usuário
         [Column(TypeName = "VARCHAR(50)")]
         [Required(ErrorMessage = "O Usuário é obrigatório!")]
         public string? Usuario { get; set; }
@@ -29,13 +30,10 @@ namespace Events_PLUS.Domains
         public string? Senhas { get; set; }
 
         //--------------------------------------------------------------------------------
-
         // FK do IDTipoUsuário
         public Guid IdTipoUsuario { get; set; }
         [ForeignKey("IdTipoUsuario")]
         public TiposUsuarios? TiposUsuario { get; set; }
         }
-
-
     }
 
