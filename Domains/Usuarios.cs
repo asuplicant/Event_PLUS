@@ -33,7 +33,7 @@ namespace Events_PLUS.Domains
         // FK do IDTipoUsuário
         public Guid IdTipoUsuario { get; set; }
         [ForeignKey("IdTipoUsuario")]
-        public TiposUsuarios? TiposUsuario { get; set; }
+        public TipoUsuarios? TiposUsuario { get; set; }
         }
     }
 

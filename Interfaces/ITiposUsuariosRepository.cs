@@ -1,16 +1,13 @@
-﻿using Events_PLUS.Domains;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Events_PLUS.Interfaces
+namespace Events_PLUS.Domains;
+
+public interface ITipoUsuarioRepository
 {
-        public interface ITiposUsuariosRepository
-        {
-            void Cadastrar(TiposUsuarios novoTipoUsuario);
-            void Deletar(Guid id);
-
-            List<TiposUsuarios> Listar();
-
-            TiposUsuarios BuscarPorID(Guid id);
-
-            void Atualizar(Guid id, TiposUsuarios tipoUsuario);
-        }
-    }
+    void Cadastrar(TipoUsuarios tipoUsuario);
+    void Deletar(Guid id);
+    List<TipoUsuarios> Listar();
+    TipoUsuarios BuscarPorId(Guid id);
+    void Atualizar(Guid id, TipoUsuarios tipoUsuario);
+}

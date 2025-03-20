@@ -1,0 +1,160 @@
+[
+  {
+    "ContainingType": "Events_PLUS.Controllers.TipoEventoController",
+    "Method": "Post",
+    "RelativePath": "api/TipoEvento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipoEvento",
+        "Type": "Events_PLUS.Domains.TiposEventos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Events_PLUS.Controllers.TipoEventoController",
+    "Method": "Get",
+    "RelativePath": "api/TipoEvento",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Events_PLUS.Controllers.TipoEventoController",
+    "Method": "DeleteById",
+    "RelativePath": "api/TipoEvento/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Events_PLUS.Controllers.TipoEventoController",
+    "Method": "Put",
+    "RelativePath": "api/TipoEvento/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "tipoEvento",
+        "Type": "Events_PLUS.Domains.TiposEventos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Events_PLUS.Controllers.TipoEventoController",
+    "Method": "GetById",
+    "RelativePath": "api/TipoEvento/BuscarPorId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Events_PLUS.Controllers.TipoUsuarioController",
+    "Method": "Post",
+    "RelativePath": "api/TipoUsuario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tipoUsuario",
+        "Type": "Events_PLUS.Domains.TipoUsuarios",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Events_PLUS.Controllers.TipoUsuarioController",
+    "Method": "Get",
+    "RelativePath": "api/TipoUsuario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Events_PLUS.Controllers.TipoUsuarioController",
+    "Method": "DeleteById",
+    "RelativePath": "api/TipoUsuario/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Events_PLUS.Controllers.TipoUsuarioController",
+    "Method": "Put",
+    "RelativePath": "api/TipoUsuario/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "tiposUsuarios",
+        "Type": "Events_PLUS.Domains.TipoUsuarios",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Events_PLUS.Controllers.TipoUsuarioController",
+    "Method": "GetById",
+    "RelativePath": "api/TipoUsuario/BuscarPorId/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

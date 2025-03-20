@@ -1,6 +1,5 @@
 ﻿using Events_PLUS.Domains;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 
 namespace Events_PLUS.Context
 {
@@ -20,7 +19,7 @@ namespace Events_PLUS.Context
         public DbSet<Instituicoes> Instituicoes { get; set; }
         public DbSet<PresencasEventos> PresencasEventos { get; set; }
         public DbSet<TiposEventos> TiposEventos { get; set; }
-        public DbSet<TiposUsuarios> TiposUsuarios { get; set; }
+        public DbSet<TipoUsuarios> TipoUsuarios { get; set; }
         public DbSet<Usuarios> Usuarios { get; set; }
         
 

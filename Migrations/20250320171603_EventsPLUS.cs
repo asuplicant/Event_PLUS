@@ -38,15 +38,15 @@ namespace Events_PLUS.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TiposUsuarios",
+                name: "TipoUsuarios",
                 columns: table => new
                 {
-                    TipoUsuarioID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    TipoUsuarioId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     TituloTipoUsuario = table.Column<string>(type: "VARCHAR(50)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TiposUsuarios", x => x.TipoUsuarioID);
+                    table.PrimaryKey("PK_TipoUsuarios", x => x.TipoUsuarioId);
                 });
 
             migrationBuilder.CreateTable(
@@ -91,10 +91,10 @@ namespace Events_PLUS.Migrations
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.IdUsuario);
                     table.ForeignKey(
-                        name: "FK_Usuarios_TiposUsuarios_IdTipoUsuario",
+                        name: "FK_Usuarios_TipoUsuarios_IdTipoUsuario",
                         column: x => x.IdTipoUsuario,
-                        principalTable: "TiposUsuarios",
-                        principalColumn: "TipoUsuarioID",
+                        principalTable: "TipoUsuarios",
+                        principalColumn: "TipoUsuarioId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -215,7 +215,7 @@ namespace Events_PLUS.Migrations
                 name: "TiposEventos");
 
             migrationBuilder.DropTable(
-                name: "TiposUsuarios");
+                name: "TipoUsuarios");
         }
     }
 }

@@ -6,6 +6,12 @@ namespace Events_PLUS.Repositories
 {
     public class TipoEventoRepository : ITiposEventosRepository
     {
+        // Variável que armazena o context
+
+        // Método Construtivo
+
+        // Desenvolver os métodos que foram criados na minha interface
+
         private readonly Events_PLUS_Context _context;
         public TipoEventoRepository(Events_PLUS_Context context)
         {
@@ -25,23 +31,10 @@ namespace Events_PLUS.Repositories
         //---------------------------------------------------------------------------------
         // TiposEventos BuscarPorId
 
-        public Events_PLUS.Domains.TiposEventos BuscarPorId(Guid id)
+        public TiposEventos BuscarPorId(Guid id)
         {
-            try
-            {
-                TiposEventos tipoEventoBuscado = _context.TiposEventos.Find(id)!;
-
-                if (tipoEventoBuscado != null)
-                {
-                    return tipoEventoBuscado;
-                }
-                return null;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            TiposEventos tiposEventosBuscado = _context.TiposEventos.Find(id)!;
+            return tiposEventosBuscado;
         }
 
         //---------------------------------------------------------------------------------
