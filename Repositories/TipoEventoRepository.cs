@@ -6,46 +6,56 @@ namespace Events_PLUS.Repositories
 {
     public class TipoEventoRepository : ITiposEventosRepository
     {
-        // Variável que armazena o context
-
-        // Método Construtivo
-
-        // Desenvolver os métodos que foram criados na minha interface
-
         private readonly Events_PLUS_Context _context;
         public TipoEventoRepository(Events_PLUS_Context context)
         {
             _context = context;
         }
-        public void Atualizar(Guid id, Events_PLUS.Domains.TiposEventos tipoEventos)
-        {
-            TiposEventos eventoBuscado = _context.TiposEventos.Find(id)!;
-
-            if (eventoBuscado != null)
-            {
-                eventoBuscado.TituloTipoEvento = tipoEventos.TituloTipoEvento;
-            }
-            _context.SaveChanges();
-        }
 
         //---------------------------------------------------------------------------------
-        // TiposEventos BuscarPorId
-
-        public TiposEventos BuscarPorId(Guid id)
-        {
-            TiposEventos tiposEventosBuscado = _context.TiposEventos.Find(id)!;
-            return tiposEventosBuscado;
-        }
-
-        //---------------------------------------------------------------------------------
-        // Cadastrar TiposEventos
-
-        public void Cadastrar(Events_PLUS.Domains.TiposEventos tipoEventos)
+        // Atualizar
+        public void Atualizar(Guid id, TiposEventos tiposEventos)
         {
             try
             {
-                _context.TiposEventos.Add(tipoEventos);
+                TiposEventos tiposEventosBuscado = _context.TipoEvento.Find(id)!;
 
+                if (tiposEventosBuscado != null)
+                {
+                    tiposEventosBuscado.TituloTipoEvento = tiposEventos.TituloTipoEvento;
+                }
+
+                _context.SaveChanges();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        //---------------------------------------------------------------------------------
+        // Buscar Por Id
+        public TiposEventos BuscarPorId(Guid id)
+        {
+            try
+            {
+                TiposEventos tiposEventosBuscado = _context.TipoEvento.Find(id)!;
+                return tiposEventosBuscado;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        //---------------------------------------------------------------------------------
+        // Cadastrar
+        public void Cadastrar(TiposEventos tiposEventos)
+        {
+            try
+            {
+                _context.TipoEvento.Add(tiposEventos);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -59,30 +69,28 @@ namespace Events_PLUS.Repositories
         // Deletar
         public void Deletar(Guid id)
         {
-
             try
             {
-                TiposEventos eventoBuscado = _context.TiposEventos.Find(id)!;
+                TiposEventos tiposEventos = _context.TipoEvento.Find(id)!;
 
-                if (eventoBuscado != null)
+                if (tiposEventos != null)
                 {
-                    _context.TiposEventos.Remove(eventoBuscado);
+                    _context.TipoEvento.Remove(tiposEventos);
                 }
                 _context.SaveChanges();
             }
             catch (Exception)
             {
+
                 throw;
             }
-
         }
 
         //---------------------------------------------------------------------------------
         // Listar
         public List<TiposEventos> Listar()
         {
-            List<TiposEventos> ListaEvento = _context.TiposEventos.ToList();
-            return ListaEvento;
+            return _context.TipoEvento.ToList();
         }
     }
 }

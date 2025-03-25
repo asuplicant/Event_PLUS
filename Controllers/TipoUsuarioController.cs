@@ -16,7 +16,8 @@ namespace Events_PLUS.Controllers
             _tipoUsuarioRepository = tipoUsuarioRepository;
         }
 
-        //cadastrar
+        //---------------------------------------------------------------------------------
+        // Cadastrar
         [HttpPost]
         public IActionResult Post(TipoUsuarios tipoUsuario)
         {
@@ -31,8 +32,8 @@ namespace Events_PLUS.Controllers
             }
         }
 
-
-        //deletar
+        //---------------------------------------------------------------------------------
+        // Deletar
         [HttpDelete("{id}")]
         public IActionResult DeleteById(Guid id)
         {
@@ -48,8 +49,7 @@ namespace Events_PLUS.Controllers
             }
         }
 
-
-
+        //---------------------------------------------------------------------------------
         // Listar
         [HttpGet]
         public IActionResult Get()
@@ -67,7 +67,7 @@ namespace Events_PLUS.Controllers
         }
 
 
-
+        //---------------------------------------------------------------------------------
         // Buscar por Id
         [HttpGet("BuscarPorId/{id}")]
         public IActionResult GetById(Guid id)

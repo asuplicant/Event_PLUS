@@ -30,6 +30,7 @@ namespace Events_PLUS.Repositories
                         return usuarioBuscado;
                     }
                 }
+
                 return null!;
             }
             catch (Exception)
@@ -79,7 +80,7 @@ namespace Events_PLUS.Repositories
             throw new NotImplementedException();
         }
 
-        Usuarios IUsuarioRepository.BuscarPorID(Guid id)
+        Usuarios IUsuarioRepository.BuscarPorId(Guid id)
         {
             throw new NotImplementedException();
         }
@@ -88,5 +89,12 @@ namespace Events_PLUS.Repositories
         {
             throw new NotImplementedException();
         }
+
+        List<Usuarios> IUsuarioRepository.ListarPorTipo(Guid idTipoUsuario)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
+
+        

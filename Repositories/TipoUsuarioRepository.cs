@@ -7,9 +7,9 @@ namespace Events_PLUS.Repositories
 {
     public class TipoUsuarioRepository : ITipoUsuarioRepository
     {
-
         private readonly Events_PLUS_Context _context;
         public TipoUsuarioRepository(Events_PLUS_Context context)
+
         {
             _context = context;
         }
@@ -21,8 +21,10 @@ namespace Events_PLUS.Repositories
             try
             {
                 TipoUsuarios tipoUsuarioBuscado = _context.TipoUsuarios.Find(id)!;
+
                 if (tipoUsuarioBuscado != null)
                 {
+
                     tipoUsuarioBuscado.TituloTipoUsuario = tipoUsuario.TituloTipoUsuario;
                 }
 
@@ -35,11 +37,15 @@ namespace Events_PLUS.Repositories
             }
         }
 
+        //---------------------------------------------------------------------------------
+        // Buscar Por Id
+
         public TipoUsuarios BuscarPorId(Guid id)
         {
             try
             {
                 TipoUsuarios tipoUsuarioBuscado = _context.TipoUsuarios.Find(id)!;
+
                 return tipoUsuarioBuscado;
             }
             catch (Exception)
@@ -49,8 +55,9 @@ namespace Events_PLUS.Repositories
             }
         }
 
+        //---------------------------------------------------------------------------------
+        // Cadastrar
 
-        // cadastrar
         public void Cadastrar(TipoUsuarios tipoUsuario)
         {
             try
@@ -65,8 +72,9 @@ namespace Events_PLUS.Repositories
             }
         }
 
+        //---------------------------------------------------------------------------------
+        // Deletar
 
-        // deletar 
         public void Deletar(Guid id)
         {
             try
@@ -85,6 +93,9 @@ namespace Events_PLUS.Repositories
                 throw;
             }
         }
+
+        //---------------------------------------------------------------------------------
+        // Listar
 
         public List<TipoUsuarios> Listar()
         {

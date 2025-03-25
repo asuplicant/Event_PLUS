@@ -7,29 +7,29 @@ namespace Events_PLUS.Context
     {
         public Events_PLUS_Context()
         {
-        }
 
+        }
         public Events_PLUS_Context(DbContextOptions<Events_PLUS_Context> options) : base(options)
         {
         }
 
-        // Ctrl + D = Duplica a linha!
-        public DbSet<ComentarioEvento> ComentarioEvento { get; set; }
-        public DbSet<Eventos> Eventos { get; set; }
-        public DbSet<Instituicoes> Instituicoes { get; set; }
-        public DbSet<PresencasEventos> PresencasEventos { get; set; }
-        public DbSet<TiposEventos> TiposEventos { get; set; }
-        public DbSet<TipoUsuarios> TipoUsuarios { get; set; }
-        public DbSet<Usuarios> Usuarios { get; set; }
-        
+        public DbSet<Evento> Evento { get; set; }
+        public DbSet<TipoUsuarios> TipoUsuario { get; set; }
+        public DbSet<Usuarios> Usuario { get; set; }
+        public DbSet<Instituicoes> Instituicao { get; set; }
+        public DbSet<TiposEventos> TipoEvento { get; set; }
+        public DbSet<Presenca> Presenca { get; set; }
+        public DbSet<Feedback> Feedback { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=NOTE13-S28\\SQLEXPRESS;Database=Events_PLUS;User ID=sa;Password=Senai@134;TrustServerCertificate=true");
+                optionsBuilder.UseSqlServer("Server=NOTE40-S28\\SQLEXPRESS; Database=Event; User Id=sa; Pwd=Senai@134; TrustServerCertificate=true;");
             }
 
         }
+
+
     }
 }

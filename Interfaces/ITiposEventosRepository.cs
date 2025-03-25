@@ -2,22 +2,13 @@
 
 namespace Events_PLUS.Interfaces
 {
-        public interface ITiposEventosRepository
-        {
-            
-            // Cadastrar
-            void Cadastrar(TiposEventos tipoEvento);
+    public interface ITiposEventosRepository
+    {
+        void Cadastrar(TiposEventos tipoEvento);
+        List<TiposEventos> Listar();
+        void Deletar(Guid id);
+        void Atualizar(Guid id, TiposEventos tipoEvento);
+        TiposEventos BuscarPorId(Guid id);
 
-            // Listar
-            List<TiposEventos> Listar();
-
-            // Deletar
-            void Deletar(Guid id);
-
-            // Atualizar
-            void Atualizar(Guid id, TiposEventos tipoEvento);
-            
-            // BuscarPorId
-            TiposEventos BuscarPorId(Guid id);
-        }
     }
+}

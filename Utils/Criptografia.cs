@@ -2,9 +2,9 @@
 {
     public static class Criptografia
     {
-        public static string GerarHash(string senha)
+        public static string GerarHash(string Senha)
         {
-            return BCrypt.Net.BCrypt.HashPassword(senha);
+            return BCrypt.Net.BCrypt.HashPassword(Senha);
         }
 
         public static bool CompararHash(string senhaInformada, string senhaBanco)
