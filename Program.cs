@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Events_PLUS.Domains;
 using Events_PLUS.Interfaces;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Configuração de serviços
@@ -25,6 +26,10 @@ builder.Services.AddDbContext<Events_PLUS_Context>(options =>
 // Injeção de dependência dos repositórios
 builder.Services.AddScoped<ITiposEventosRepository, TipoEventoRepository>();
 builder.Services.AddScoped<ITipoUsuarioRepository, TipoUsuarioRepository>();
+builder.Services.AddScoped<IPresencaRepository, PresencasEventosRepository>();
+builder.Services.AddScoped<IComentariosEventosRepository, ComentariosEventosRepository>();
+builder.Services.AddScoped<IEventoRepository, EventoRepository>();
+builder.Services.AddScoped<IUsuarioRepository, UsuariosRepository>();
 
 
 //Adiciona o serviço de Controllers

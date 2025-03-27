@@ -1,5 +1,4 @@
 ﻿using Events_PLUS.Domains;
-using Events_PLUS.Interfaces;
 using Events_PLUS.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,24 +9,39 @@ namespace Events_PLUS.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private readonly IUsuarioRepository _usuarioRepository;
+        private readonly ITipoUsuarioRepository _tiposUsuariosRepository;
 
-        public UsuarioController(IUsuarioRepository usuarioRepository)
+        public UsuarioController(ITipoUsuarioRepository tiposUsuariosRepository)
         {
-            _usuarioRepository = usuarioRepository;
+            _tiposUsuariosRepository = tiposUsuariosRepository;
+        }
+
+        //---------------------------------------------------------------------------------
+        // Listar
+        [HttpGet]
+        public IActionResult Get()
+        {
+            try
+            {
+                return Ok(_tiposUsuariosRepository.Listar());
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+
         }
 
         //---------------------------------------------------------------------------------
         // Cadastrar
         [HttpPost]
-        public IActionResult Post(Usuarios usuario)
+        public IActionResult Post(TipoUsuarios novoTipoUsuario)
         {
             try
             {
-                _usuarioRepository.Cadastrar(usuario);
-
-                return StatusCode(201, usuario);
-
+                _tiposUsuariosRepository.Cadastrar(novoTipoUsuario);
+                return Created();
             }
             catch (Exception e)
             {
@@ -37,45 +51,57 @@ namespace Events_PLUS.Controllers
         }
 
         //---------------------------------------------------------------------------------
-        // Buscar por Id
-
-        [HttpGet("{id}")]
-
-        public IActionResult GetByID(Guid id)
+        // Buscar Por Id
+        [HttpGet("BuscarPorId/{id}")]
+        public IActionResult GetById(Guid id)
         {
             try
             {
-                Usuarios usuarioBuscado = _usuarioRepository.BuscarPorId(id);
-
-                if (usuarioBuscado != null)
-                {
-                    return Ok(usuarioBuscado);
-                }
-
-                return null!;
+                TipoUsuarios tipoBuscado = _tiposUsuariosRepository.BuscarPorId(id);
+                return Ok(tipoBuscado);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                return BadRequest(e.Message);
+
+                return BadRequest();
             }
         }
 
         //---------------------------------------------------------------------------------
-        // Listar Por Tipo
-
-        [HttpGet("tipoUsuario/{idTipoUsuario}")]
-        public IActionResult ListarPorTipo(Guid idTipoUsuario)
+        // Deletar
+        [HttpDelete("{id}")]
+        public IActionResult Delete(Guid id)
         {
-            List<Usuarios> usuario = _usuarioRepository.ListarPorTipo(idTipoUsuario);
-            Console.WriteLine(usuario);
-
-            if (usuario == null)
+            try
             {
-                return NotFound("Nenhum usuario encontrado para esse tipo de usuario.");
+                _tiposUsuariosRepository.Deletar(id);
+                return NoContent();
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
 
-            return Ok(usuario);
+        }
+
+        //---------------------------------------------------------------------------------
+        // Atualizar
+        [HttpPut("{id}")]
+        public IActionResult Put(Guid id, TipoUsuarios tipoUsuario)
+        {
+            try
+            {
+                _tiposUsuariosRepository.Atualizar(id, tipoUsuario);
+                return NoContent();
+            }
+            catch (Exception e)
+            {
+
+                return BadRequest(e.Message);
+            }
+
+
         }
     }
 }
-    

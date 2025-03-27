@@ -20,7 +20,7 @@ namespace Events_PLUS.Repositories
         {
             try
             {
-                TipoUsuarios tipoUsuarioBuscado = _context.TipoUsuarios.Find(id)!;
+                TipoUsuarios tipoUsuarioBuscado = _context.TipoUsuario.Find(id)!;
 
                 if (tipoUsuarioBuscado != null)
                 {
@@ -44,7 +44,7 @@ namespace Events_PLUS.Repositories
         {
             try
             {
-                TipoUsuarios tipoUsuarioBuscado = _context.TipoUsuarios.Find(id)!;
+                TipoUsuarios tipoUsuarioBuscado = _context.TipoUsuario.Find(id)!;
 
                 return tipoUsuarioBuscado;
             }
@@ -62,7 +62,7 @@ namespace Events_PLUS.Repositories
         {
             try
             {
-                _context.TipoUsuarios.Add(tipoUsuario);
+                _context.TipoUsuario.Add(tipoUsuario);
                 _context.SaveChanges();
             }
             catch (Exception)
@@ -79,11 +79,11 @@ namespace Events_PLUS.Repositories
         {
             try
             {
-                TipoUsuarios tipoUsuarioBuscado = _context.TipoUsuarios.Find(id)!;
+                TipoUsuarios tipoUsuarioBuscado = _context.TipoUsuario.Find(id)!;
 
                 if (tipoUsuarioBuscado != null)
                 {
-                    _context.TipoUsuarios.Remove(tipoUsuarioBuscado);
+                    _context.TipoUsuario.Remove(tipoUsuarioBuscado);
                 }
                 _context.SaveChanges();
             }
@@ -99,7 +99,7 @@ namespace Events_PLUS.Repositories
 
         public List<TipoUsuarios> Listar()
         {
-            return _context.TipoUsuarios.ToList();
+            return _context.TipoUsuario.ToList();
         }
     }
 }

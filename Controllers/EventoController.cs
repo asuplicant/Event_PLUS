@@ -17,6 +17,8 @@ namespace Events_PLUS.Controllers
             _eventoRepository = eventoRepository;
         }
 
+        //---------------------------------------------------------------------------------
+        // Listar
 
         [HttpGet]
         public IActionResult Get()
@@ -31,6 +33,9 @@ namespace Events_PLUS.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        //---------------------------------------------------------------------------------
+        // Cadastrar
 
         [HttpPost]
         public IActionResult Post(Evento evento)
@@ -47,6 +52,9 @@ namespace Events_PLUS.Controllers
             }
         }
 
+        //---------------------------------------------------------------------------------
+        // Deletar
+
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -62,6 +70,8 @@ namespace Events_PLUS.Controllers
             }
         }
 
+        //---------------------------------------------------------------------------------
+        // Cadastrar
         [HttpPut]
         public IActionResult Put(Guid id, Evento novoEvento)
         {

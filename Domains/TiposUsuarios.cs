@@ -7,7 +7,7 @@ namespace Events_PLUS.Domains;
 public class TipoUsuarios
 {
     [Key]
-    public Guid TipoUsuarioId { get; set; }
+    public Guid IDTipoUsuario { get; set; }
 
     [Column(TypeName = "VARCHAR(50)")]
     [Required(ErrorMessage = "O tipo do usuário é obrigatório!")]
